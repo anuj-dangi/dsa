@@ -16,39 +16,39 @@ void nextPermutation(vector<int>& nums)
 {
     int index = -1;
 
-    for(int i=1;i<nums.size();i++)
-    {
-        if(nums[i] > nums[i-1])
+        for(int i=nums.size()-2;i>=0;i--)
         {
-            index = i-1;
+            if(nums[i] < nums[i+1])
+            {
+                index = i;
+                break;
+            }
         }
-    }
 
-    if(index != -1)
-    {
-        int minInd = index;
+        if(index != -1)
+        {
+            for(int i=nums.size()-1;i>=index+1;i--)
+            {
+                if(nums[i] > nums[index])
+                {
+                    swap(nums[index], nums[i]);
+                    break;
+                }
+            }
+        }
 
-        for(int i=index+1;i<nums.size();i++)
-            if(nums[i] > nums[minInd])
-                minInd = i;
-        
-        swap(nums[index], nums[minInd]);
-    }
-
-    
-
-    int l=index+1, r=nums.size()-1;
-
-    while(l<r)
-    {
-        swap(nums[l++], nums[r--]);
-    }
+        int l=index+1, r=nums.size()-1;
+        while(l<r)
+        {
+            swap(nums[l++], nums[r--]);
+        }
 }
 
 int main()
 {
     vector<int> nums = {3, 1, 5};
 
+    //Give lexicographically next 
     nextPermutation(nums);
 
     for(int ele : nums)
