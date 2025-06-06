@@ -4,3 +4,4 @@ DAY 9 :
     3. Insertion Sort.
     4. Dutch National Flag.
     5. Merge Sorted Array.
+    6. Next Permutation.
