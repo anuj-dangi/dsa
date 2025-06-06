@@ -14,6 +14,7 @@ void swap(int &a, int &b)
 void sortArray(vector<int> &arr)
 {
     //Complexity of O(n)
+    //
     // int zero = 0, one = 0, two = 0;
 
     // for(int i=0;i<arr.size();i++)
@@ -29,7 +30,8 @@ void sortArray(vector<int> &arr)
     // for(int i=0;i<one;i++) arr[index++] = 1;
     // for(int i=0;i<two;i++) arr[index++] = 2;
 
-    //MOre optimal
+    //MOre optimal  
+    //Space Complexity(O(1))
     int l=0, mid=0, r=arr.size()-1;
 
     while(mid <= r)

@@ -3,3 +3,4 @@ DAY 9 :
     2. Selection Sort.
     3. Insertion Sort.
     4. Dutch National Flag.
+    5. Merge Sorted Array.
