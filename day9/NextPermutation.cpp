@@ -10,7 +10,7 @@ void swap(int &a, int &b)
     b = temp;
 }
 
-//Time Complexity -> O(m+n)
+//Time Complexity -> O(n)
 //Space Complexity -> O(1)
 void nextPermutation(vector<int>& nums) 
 {
