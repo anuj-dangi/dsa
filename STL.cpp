@@ -1,9 +1,10 @@
 //This file contain standard template library of cpp
 #include<iostream>
 #include<vector>
+#include<list>
 using namespace std;
 
-//Uses array as its implementation.
+//Uses dynamic array as its internal implementation.
 //Each time vector size get full it double its capacity.
 void vectorStd()
 {
@@ -71,9 +72,37 @@ void iteratorStd()
     }
 }
 
+//Internally implemented using double liked list
+void listStd()
+{
+    list<int> li = {1, 2, 3};
+    list<int> l(li);
+
+    for(auto it=l.begin();it!=l.end();it++)
+    {
+        cout << *(it)<<" ";
+    }
+
+    // As list is implemented as double link list both front and back operation can be done
+    // push_back & push_front
+    // emplace_back & emplace_front
+    // pop_back & pop_front
+    //size, erase, clear, begin, end, rbegin, rend, insert, front, back
+
+    l.push_back(5);
+    l.push_front(0);
+    cout << "\n";
+    for(auto it=l.begin();it!=l.end();it++)
+    {
+        cout << *(it)<<" ";
+    }
+
+}
+
 int main()
 {
     //vectorStd();
-    iteratorStd();
+    //iteratorStd();
+    listStd();
     return 0;
 }
