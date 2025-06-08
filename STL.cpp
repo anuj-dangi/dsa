@@ -49,7 +49,26 @@ void vectorStd()
 
 void iteratorStd()
 {
+    vector<int> vec = {1, 2, 3, 4};
 
+    vector<int>::iterator it;   //normal iterator
+
+    for(it=vec.begin(); it!=vec.end();it++)
+    {
+        cout << *(it) << " ";
+    }
+    cout << "\n";
+    //reverse iterator
+    for(vector<int>::reverse_iterator it=vec.rbegin();it!=vec.rend();it++)
+    {
+        cout << *(it) << " ";
+    }
+    cout << "\n";
+    //Instead of writing this large syntax we can use 'auto' and c++ will automatically see what's is that
+    for(auto it=vec.begin(); it!=vec.end();it++)
+    {
+        cout << *(it) << " ";
+    }
 }
 
 int main()
