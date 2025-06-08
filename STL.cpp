@@ -5,6 +5,8 @@
 #include<deque>
 #include<stack>
 #include<queue>
+#include<map>
+#include<unordered_map>
 using namespace std;
 
 //Uses dynamic array as its internal implementation.
@@ -231,6 +233,71 @@ void priorityQueueStl()
     //In priority queue time complexity for top() -> O(1), push, emplace() -> O(logn)(as internally they are tree), pop() -> O(logn)
 }
 
+//specifically used to store key:value pair
+void mapStl()
+{
+    //Map operations -> insert, emplace, count, erase, find, size, empty
+    map<string,int> id;
+    //key can be duplicate they are unique
+
+    id["anuj"] = 16;
+    id["chandan"] = 15;
+    id["anuj"] = 32;
+
+    id.erase("anuj");
+
+    id.insert({"piyush", 10});
+    id.emplace("antu", 8);
+
+    for(auto p : id)
+    {
+        cout << p.first << " " << p.second << endl;
+    }
+
+    cout << id.count("anuj");   // returns the instance of that particular key
+
+    //find() reutrns the iterator of that particular key or end() in case of not found
+    if(id.find("chandan") != id.end())
+    {
+        cout << "found";
+    }
+    else
+        cout << "not found";
+
+    //inside map container, element are sorted on basis of key on order of lexicographically
+
+    //Other map types -> multimap(can have duplicate keys)
+
+    multimap<string, int> mm;
+
+    //mm["123"] = 123; -> can't use as multimap contain duplicate keys have to use insert, emplace
+    mm.insert({"anuj", 16});
+    mm.insert({"anuj", 100});
+
+    for(auto p : mm)
+    {
+        cout << p.first << " " << p.second << endl;
+    }
+    cout << mm.count("anuj") <<endl;
+
+    //If we want to erase some key:value pair from map we can't use erase as it will remove all duplicate also 
+    //We will use erase with the removing key iterator by using find()
+    mm.erase(mm.find("anuj"));
+
+    for(auto p : mm)
+    {
+        cout << p.first << " " << p.second << endl;
+    }
+
+    //Other map type -> unordered map(have to include explecitly) does not store in a sorted order(lexicographically)
+    //It does not stores duplicate keys
+    unordered_map<string, int> um;
+
+    //Map(self balancing tree) time complexity O(logn)
+    //Unordered_map time complexity O(1) -> most time, rare cases -> O(n)
+
+}
+
 int main()
 {
     //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
@@ -245,6 +312,7 @@ int main()
     //Non-sequential container
     //stackStl();
     //queueStl();
-    priorityQueueStl();
+    //priorityQueueStl();
+    mapStl();
     return 0;
 }
