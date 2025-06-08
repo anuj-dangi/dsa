@@ -7,6 +7,7 @@
 #include<queue>
 #include<map>
 #include<unordered_map>
+#include<set>
 using namespace std;
 
 //Uses dynamic array as its internal implementation.
@@ -298,6 +299,34 @@ void mapStl()
 
 }
 
+void setStl()
+{
+    //set operations -> insert, emplace, count, erase, find, size, empty
+    //This contatiner stores only unique value(no duplication allowed) and stores in a sorted order
+    //set also uses self-balancing tree so its time complexity for insert, erase are O(logn)
+    set<int> s;
+    s.insert(1);
+    s.insert(5);
+    s.insert(2);
+
+    for(int ele : s)
+    {
+        cout << ele << " ";
+    }
+    cout << endl;
+
+    //lower_bound in set -> returns the value which is passed if found otherwise returns the next largest value
+    //It returns a iterator so we have to dereference it first
+    cout << *(s.lower_bound(4)) << endl;
+
+    //upper_bound -> returns the iterator value which is higher than the passed value
+    cout << *(s.upper_bound(2)) << endl;
+
+    //Set also have differenent type
+    //multiset
+    //unordered_set -> O(1) time complexity(no upper_bound, lower_bound)
+}
+
 int main()
 {
     //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
@@ -313,6 +342,7 @@ int main()
     //stackStl();
     //queueStl();
     //priorityQueueStl();
-    mapStl();
+    //mapStl();
+    setStl();
     return 0;
 }
