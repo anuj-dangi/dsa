@@ -4,6 +4,7 @@
 #include<list>
 #include<deque>
 #include<stack>
+#include<queue>
 using namespace std;
 
 //Uses dynamic array as its internal implementation.
@@ -152,7 +153,7 @@ void pairUtility()
 void stackStl()
 {
     stack<int> s;
-    //push, emplace, top, pop, size, empty, swap
+    //Stack operations -> push, emplace, top, pop, size, empty, swap
     s.push(1);
     s.push(2);
     s.push(3);
@@ -169,12 +170,65 @@ void stackStl()
         cout << s2.top() << endl;
         s2.pop();
     }
-    
+    //time complexity top(), pop(), push() -> O(1)
 }
 
+//FIFO -> first in first out
 void queueStl()
 {
-    
+    //Queue operations -> push, emplace, front, pop, size, empty, swap
+
+    queue<int> q;
+    q.push(1);
+    q.push(2);
+    q.push(3);
+
+    queue<int> q2;
+    q.swap(q2);
+
+    while(!q2.empty())
+    {
+        cout << q2.front() << " ";
+        q2.pop();
+    }
+
+    //time complexity top(), pop(), push() -> O(1)
+}
+
+//Uses Max(max element at top) or Min(min element at top) Heap as its internal implementation -> Complete binary tree
+void priorityQueueStl()
+{
+    //priority_queue operations -> push, emplace, top, pop, size, empty, swap
+    priority_queue<int> pq;
+    //Just assume a queue in which the priority element will get poped first.
+
+    pq.push(4);
+    pq.push(1);
+    pq.push(5);
+    pq.push(10);
+
+    while(!pq.empty())
+    {
+        cout << pq.top() << " ";
+        pq.pop();
+    }
+    //The above implementaion gives max heap implemenatation or we can say at top max priority element is there
+    //For reverse priority queue -> min heap (smallest element at top)
+    priority_queue<int, vector<int>, greater<int>> rpq;
+    //here in reverse priority queue the greater<int> is nothing but functor(a function) which is like a comparator (which tells how to sort)
+
+    rpq.push(4);
+    rpq.push(1);
+    rpq.push(5);
+    rpq.push(10);
+    cout <<endl;
+    while(!rpq.empty())
+    {
+        cout << rpq.top() << " ";
+        rpq.pop();
+    }
+
+    //In priority queue time complexity for top() -> O(1), push, emplace() -> O(logn)(as internally they are tree), pop() -> O(logn)
 }
 
 int main()
@@ -190,6 +244,7 @@ int main()
 
     //Non-sequential container
     //stackStl();
-    queueStl();
+    //queueStl();
+    priorityQueueStl();
     return 0;
 }
