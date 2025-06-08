@@ -2,6 +2,7 @@
 #include<iostream>
 #include<vector>
 #include<list>
+#include<deque>
 using namespace std;
 
 //Uses dynamic array as its internal implementation.
@@ -99,10 +100,29 @@ void listStd()
 
 }
 
+//Double ended queue
+//Same operations as list
+//Internally implemented as dynamic array
+//any element can be accessed using index, this is not possible in list
+void dequeStd()
+{
+    deque<int> d = {1, 2, 3};
+
+    // As deque is implemented as double ended queue there are queue at both side front and back operation can be done
+    // push_back & push_front
+    // emplace_back & emplace_front
+    // pop_back & pop_front
+    //size, erase, clear, begin, end, rbegin, rend, insert, front, back
+
+    cout << d[2];
+}
+
 int main()
 {
+    //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
     //vectorStd();
     //iteratorStd();
-    listStd();
+    //listStd();
+    //dequeStd();
     return 0;
 }
