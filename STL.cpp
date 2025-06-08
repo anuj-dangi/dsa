@@ -117,6 +117,36 @@ void dequeStd()
     cout << d[2];
 }
 
+//Pair can be used as we use primitive data type like int, float, double
+void pairUtility()
+{
+    pair<string, int> p = {"anuj", 16};
+
+    cout << p.first << " "<< p.second;
+
+    pair<string, pair<string, int>> id = {"anuj", {"uoh", 16}};
+
+    cout << endl << id.first << " " << id.second.first << " " << id.second.second;
+
+    //vector example
+    vector<pair<int, int>> vec = {{1, 2},{3, 4}};
+
+    cout << vec[1].first << endl;
+
+    for(pair<int,int> pa : vec)
+    {
+        cout << pa.first << " " << pa.second << endl;
+    }
+
+    vec.push_back({5,6});
+    vec.emplace_back(7, 8);         //In-place object create the emplace_back will automatically make pair of 7, 8
+
+    for(auto pa : vec)
+    {
+        cout << pa.first << " " << pa.second << endl;
+    }
+}
+
 int main()
 {
     //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
@@ -124,5 +154,8 @@ int main()
     //iteratorStd();
     //listStd();
     //dequeStd();
+
+    //pair -> included in c++ utility library (does not have to be explecitly included)
+    pairUtility();
     return 0;
 }
