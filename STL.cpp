@@ -330,19 +330,19 @@ void setStl()
 int main()
 {
     //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
-    //vectorStd();
-    //iteratorStd();
-    //listStd();
-    //dequeStd();
+    vectorStd();
+    iteratorStd();
+    listStd();
+    dequeStd();
 
     //pair -> included in c++ utility library (does not have to be explecitly included)
-    //pairUtility();
+    pairUtility();
 
     //Non-sequential container
-    //stackStl();
-    //queueStl();
-    //priorityQueueStl();
-    //mapStl();
+    stackStl();
+    queueStl();
+    priorityQueueStl();
+    mapStl();
     setStl();
     return 0;
 }
