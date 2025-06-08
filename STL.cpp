@@ -3,6 +3,7 @@
 #include<vector>
 #include<list>
 #include<deque>
+#include<stack>
 using namespace std;
 
 //Uses dynamic array as its internal implementation.
@@ -147,6 +148,35 @@ void pairUtility()
     }
 }
 
+//LIFO -> last in first out
+void stackStl()
+{
+    stack<int> s;
+    //push, emplace, top, pop, size, empty, swap
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    stack<int> s2;
+    s2.swap(s);
+    cout << s.size() << " " << s2.size();
+    //cout << s2.pop() -> error , because pop() does not return anything
+    cout << s2.top() << endl;
+    s2.pop();
+
+    while(!s2.empty())
+    {
+        cout << s2.top() << endl;
+        s2.pop();
+    }
+    
+}
+
+void queueStl()
+{
+    
+}
+
 int main()
 {
     //vector, list, deque -> this all are called sequential containters(as it stores data in a sequentail manners)
@@ -156,6 +186,10 @@ int main()
     //dequeStd();
 
     //pair -> included in c++ utility library (does not have to be explecitly included)
-    pairUtility();
+    //pairUtility();
+
+    //Non-sequential container
+    //stackStl();
+    queueStl();
     return 0;
 }
