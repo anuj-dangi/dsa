@@ -11,16 +11,14 @@ int peakIndexInMountainArray(int arr[], int size)
         {
             mid = l + (r-l)/2;
            
-           if(mid+1 < size-1 && arr[mid] < arr[mid+1])
-           {
-                l = mid+1;
-           }
-           else if(mid-1 > 0 && arr[mid] < arr[mid-1])
-           {
-                r = mid-1;
-           }
-           else
+           if(arr[mid-1] <= arr[mid] && arr[mid] >= arr[mid+1])
                 return mid;
+            else if(arr[mid-1] <= arr[mid])
+            {
+                l = mid+1;
+            }
+            else 
+                r = mid-1;
         }
         return mid;
 }
