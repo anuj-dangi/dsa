@@ -5,3 +5,4 @@ Day 10:
     4. Remove all occurrences of substring.
     5. Permutation in String(Solving using sliding windows approach)
     6. Reverse word in a string
+    7. String compression
