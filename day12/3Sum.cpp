@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<set>
+#include <algorithm>
 using namespace std;
 
 //leetcode -  15
@@ -10,6 +11,7 @@ vector<vector<int>> threeSum(vector<int> vec, int target)
 {
         
     vector<vector<int>> ans;
+    set<vector<int>> s;
     //brute force
     for(int i=0;i<vec.size();i++)
     {
@@ -19,7 +21,14 @@ vector<vector<int>> threeSum(vector<int> vec, int target)
             {
                 if(vec[i] + vec[j] + vec[k] == target)
                 {
-                        
+                    vector<int> trip = {vec[i], vec[j], vec[k]};
+                    sort(trip.begin(), trip.end());
+
+                    if(s.find(trip) == s.end())
+                    {
+                        s.insert(trip);
+                        ans.push_back(trip);
+                    }
                 }
             }
         }
@@ -32,12 +41,14 @@ int main()
     vector<int> vec = {-1, 0, 1, 2, -1, -4};
     int target = 0;
 
-    set<int> ans = threeSum(vec, target);
+    vector<vector<int>> ans = threeSum(vec, target);
 
-    for(int ele : ans)
+    for(vector<int> v : ans)
     {
-        cout << ele << " ";
+        for(int ele : v)
+            cout << ele << " ";
+        cout << endl;
     }
-    cout << endl;
+    
     return 0;
 }
