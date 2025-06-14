@@ -82,7 +82,7 @@ vector<vector<int>> threeSum(vector<int> vec, int target)
 
                 ans.push_back(v);
                 j++;    k--;
-                while(j<k && vec[j] == vec[j+1])    j++;
+                while(j<k && vec[j] == vec[j-1])    j++;
             }
             else if(sum < 0)
             {
