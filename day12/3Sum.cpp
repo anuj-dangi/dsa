@@ -13,23 +13,53 @@ vector<vector<int>> threeSum(vector<int> vec, int target)
     vector<vector<int>> ans;
     set<vector<int>> s;
     //brute force
+    // for(int i=0;i<vec.size();i++)
+    // {
+    //     for(int j=i+1;j<vec.size();j++)
+    //     {
+    //         for(int k=j+1;k<vec.size();k++)
+    //         {
+    //             if(vec[i] + vec[j] + vec[k] == target)
+    //             {
+    //                 vector<int> trip = {vec[i], vec[j], vec[k]};
+    //                 sort(trip.begin(), trip.end());
+
+    //                 if(s.find(trip) == s.end())
+    //                 {
+    //                     s.insert(trip);
+    //                     ans.push_back(trip);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // } 
+    // return ans;
+
+    //More optimized as time complexity -> O(n*n*log(unique triplets))
     for(int i=0;i<vec.size();i++)
     {
+        int a = -vec[i];
+        set<int> unique;
         for(int j=i+1;j<vec.size();j++)
         {
-            for(int k=j+1;k<vec.size();k++)
-            {
-                if(vec[i] + vec[j] + vec[k] == target)
-                {
-                    vector<int> trip = {vec[i], vec[j], vec[k]};
-                    sort(trip.begin(), trip.end());
+            int b = vec[j];
+            int c = a - b;
 
-                    if(s.find(trip) == s.end())
-                    {
-                        s.insert(trip);
-                        ans.push_back(trip);
-                    }
+            if(unique.find(c) != unique.end())
+            {
+                vector<int> v = {-a, b, c};
+
+                sort(v.begin(), v.end());
+
+                if(s.find(v) == s.end())
+                {
+                    s.insert(v);
+                    ans.push_back(v);
                 }
+            }
+            else
+            {
+                unique.insert(b);
             }
         }
     }
