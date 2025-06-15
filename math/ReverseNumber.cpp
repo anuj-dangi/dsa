@@ -8,7 +8,6 @@ int reverseNumber(int num)
     while(num != 0)
     {
         rNum = (rNum*10) + (num%10);
-        cout << rNum << endl;
         num /= 10;
     }   
 
