@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//time complexity - O(2^n)
+//space complexity - O(n)
 int recFibonacci(int n)
 {
     if(n == 0 || n == 1)
