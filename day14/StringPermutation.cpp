@@ -3,7 +3,6 @@
 using namespace std;
 
 //Total number of permutation - n!
-//leetcode - 46
 //time complexity - O(n!*n)(total ans * how we reach)
 //space complexity - O(n! + n) -> O(n!)
 void printPermutation(string s, int pos)

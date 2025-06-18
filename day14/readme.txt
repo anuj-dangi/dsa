@@ -3,3 +3,4 @@ Day 14:
     2. SubSets(leetcode - 90)
     3. Permutation (leetcode - 46)
     4. String Permutation
+    5. N-Queen (leetcode - 51)
