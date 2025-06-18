@@ -4,6 +4,8 @@ using namespace std;
 
 //Total number of permutation - n!
 //leetcode - 46
+//time complexity - O(n!*n)(total ans * how we reach)
+//space complexity - O(n! + n) -> O(n!)
 void printPermutation(vector<int> vec, int pos)
 {
     if(pos == vec.size())
@@ -18,6 +20,7 @@ void printPermutation(vector<int> vec, int pos)
     {
         swap(vec[i], vec[pos]);
         printPermutation(vec, pos+1);
+        //backtracking
         swap(vec[i], vec[pos]);
     }
 }
