@@ -3,6 +3,7 @@
 using namespace std;
 
 //Time complexity - O((2^n)*n)
+//Number of subsets 2^n
 void printSubSets(vector<int> &arr, vector<int> &ans, int i)
 {
     //base condition
