@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+//time complexity - O(n*logn)
 void merge(vector<int> &arr, int l1,int r1, int l2, int r2)
 {
     vector<int> arrC;
