@@ -5,3 +5,4 @@ Day 14:
     4. String Permutation
     5. N-Queen (leetcode - 51)
     6. Sudoku Solver(leetcode - 37)
+    7. Rat In a Maze.
