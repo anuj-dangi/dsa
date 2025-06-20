@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+//time complexity - O(n*(2^n))
 bool isPali(string s)
 {
     int i = 0, j = s.size() - 1;
@@ -27,7 +28,7 @@ void helper(string s, vector<string> &part, vector<vector<string>> &ans)
 
     for (int i = 0; i < s.size(); i++)
     {
-        string subPart = s.substr(0, i + 1);
+        string subPart = s.substr(0, i+1);
 
         if (isPali(subPart))
         {
