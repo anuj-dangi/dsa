@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//time complexity - O(n*logn)(average)
+//worst case - O(n*n)
 int partition(vector<int>& arr, int l, int r)
 {
     int idx = l-1, pivot = arr[r];
