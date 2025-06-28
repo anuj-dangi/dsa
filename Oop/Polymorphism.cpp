@@ -39,7 +39,7 @@ public:
 
 class Child : public Polymorphism
 {
-    
+    //do nothing
 };
 
 //function overriding -> runtime polymorphism
