@@ -33,7 +33,9 @@ class Person
         }
 };
 
-//shallow copy
+//shallow copy  -> comes issue when the variables are assined memory using new operator
+//as new operator assign memory from normal memory that is stack to in heap memory.
+//the memory allocated through new operator is dynamic memory allocation i.e. memory is allocated on runtime
 class Shallow
 {
     public:
@@ -41,11 +43,16 @@ class Shallow
 
         Shallow(int n)
         {
-            num = &n;
+            num = new int;
+            *num = n;
         }
 
         Shallow(Shallow &s)
         {
+            //shallow copy
+            this->num = s.num;
+
+            //deep copy
             num = new int;
             *this->num = *s.num;
         }
@@ -53,6 +60,13 @@ class Shallow
         void print()
         {
             cout << *num << endl;
+        }
+
+        //destructor -> deletes memory occupied by obj
+        //it is alreay defined but for new operator memory allocation we have to manally close the memory
+        ~Shallow()
+        {
+            delete num;
         }
 };
 
