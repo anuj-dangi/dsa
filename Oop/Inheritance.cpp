@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+//Inheritance
 class Person
 {
     public:
