@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+//Encapsulation
 //By default in cpp access modifier(private, public, protected) is set to private
 class Person
 {
