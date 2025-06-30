@@ -11,10 +11,10 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+//leetcode - 141
+//using slow-fast approach
 bool hasCycle(ListNode *head)
 {
-    // slow fast approach
-
     ListNode *slow = head;
     ListNode *fast = head;
 
