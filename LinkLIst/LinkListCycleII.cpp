@@ -12,6 +12,7 @@ struct ListNode
 };
 //leetcode - 142
 //using slow-fast approach
+//https://excalidraw.com/#json=UUun_kHsoCekRGG0OwHG7,fEdbTL_6AYEiyUeuQznLmA
 ListNode *detectCycle(ListNode *head)
 {
     ListNode *slow = head;
