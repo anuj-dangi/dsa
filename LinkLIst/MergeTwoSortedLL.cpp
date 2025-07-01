@@ -13,6 +13,7 @@ struct ListNode
 
 // leetcode - 21
 // Merge two sorted linked list
+//time complexity - O(n+m)
 ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
 {
     // ListNode dummy(0);
