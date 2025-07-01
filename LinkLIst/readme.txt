@@ -6,3 +6,5 @@ LinkList:
     5. LinkListCycleII (leetcode - 142).
     6. Remove cycle from linked list.
     7. Merge two sorted linked list (leetcode - 21).
+    8. Merge k sorted linked list (leetcode - 23).
+    9. Copy list with random pointer (leetcode - 138).
