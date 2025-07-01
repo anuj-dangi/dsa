@@ -5,3 +5,4 @@ LinkList:
     4. Linked List Cycle (Detect cycle) (leetcode - 141).
     5. LinkListCycleII (leetcode - 142).
     6. Remove cycle from linked list.
+    7. Merge two sorted linked list (leetcode - 21).
