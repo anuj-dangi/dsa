@@ -8,3 +8,5 @@ LinkList:
     7. Merge two sorted linked list (leetcode - 21).
     8. Merge k sorted linked list (leetcode - 23).
     9. Copy list with random pointer (leetcode - 138).
+    10. Doubly linked list.
+    11. Circular linked list.
