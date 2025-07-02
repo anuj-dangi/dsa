@@ -39,7 +39,6 @@ ListNode* reverseKGroup(ListNode* head, int k)
         return NULL;
     }
 
-    int i=0;
     ListNode* temp = head;
     ListNode* prev = NULL;
 
