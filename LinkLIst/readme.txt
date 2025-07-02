@@ -10,3 +10,5 @@ LinkList:
     9. Copy list with random pointer (leetcode - 138).
     10. Doubly linked list.
     11. Circular linked list.
+    12. Reverse Nodes in K Group (leetcode - 25).
+    13. Swap nodes in pair (leetcode - 24).
