@@ -15,34 +15,72 @@ struct ListNode
 //time complexity - O(n)
 ListNode *swapPairs(ListNode *head)
 {
+    // ListNode *temp = head;
+    // ListNode *prev = NULL;
 
-    ListNode *temp = head;
-    ListNode *prev = NULL;
+    // for (int i = 0; i < 2; i++)
+    // {
+    //     if (temp == NULL)
+    //         return head;
+    //     prev = temp;
+    //     temp = temp->next;
+    // }
 
-    for (int i = 0; i < 2; i++)
+    // ListNode *nextNode = swapPairs(temp);
+    // temp = head;
+    // ListNode *prevNode = NULL;
+    // ListNode *next = NULL;
+
+    // for (int i = 0; i < 2; i++)
+    // {
+    //     next = temp->next;
+    //     temp->next = prev;
+    //     prev = temp;
+    //     temp = temp->next;
+    // }
+
+    // head->next = nextNode;
+    // return prev;
+
+    if(head == NULL || head->next == NULL)
     {
-        if (temp == NULL)
-            return head;
-        prev = temp;
-        temp = temp->next;
+        return head;
     }
 
-    ListNode *nextNode = swapPairs(temp);
-    temp = head;
-    ListNode *prevNode = NULL;
-    ListNode *next = NULL;
+    ListNode* first = head;
+    ListNode* sec = head->next;
+    ListNode* prev = NULL;
 
-    for (int i = 0; i < 2; i++)
+    while( first != NULL && sec != NULL)
     {
-        next = temp->next;
-        temp->next = prev;
-        prev = temp;
-        temp = temp->next;
+        ListNode* third = sec->next;
+
+        first->next = third;
+        sec->next = first;
+
+        if(prev != NULL){
+            prev->next = sec;
+        }
+        else
+        {
+            head = sec;
+        }
+        prev = first;
+        first = third;
+        if(third != NULL)
+        {
+            sec = first->next;
+        }
+        else
+        {
+            sec = NULL;
+        }
+
     }
 
-    head->next = nextNode;
-    return prev;
+    return head;
 }
+
 
 int main()
 {
