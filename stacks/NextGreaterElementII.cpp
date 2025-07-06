@@ -1,27 +1,26 @@
 #include <iostream>
 #include <vector>
 #include <stack>
-#include <queue>
 using namespace std;
 
 //leetcode - 503
 vector<int> nextGreater(vector<int> nums)
 {
     vector<int> ans(nums.size(), -1);
-    vector<int> sq;
+    stack<int> s;
     for(int i=nums.size()-2;i>=0;i--)
     {
-        sq.push_back(nums[i]);
+        s.push(nums[i]);
     }
     for(int i=nums.size()-1;i>=0;i--)
     {
-        while(!sq.empty() && sq.back() <= nums[i])
+        while(!s.empty() && s.top() <= nums[i])
         {
-            sq.pop_back();
+            s.pop();
         }
 
-        ans[i] = sq.empty() ? -1 : sq.back();
-        sq.push_back(nums[i]);
+        ans[i] = s.empty() ? -1 : s.top();
+        s.push(nums[i]);
     }
 
     return ans;
