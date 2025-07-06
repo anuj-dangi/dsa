@@ -25,6 +25,7 @@ vector<int> nextGreater(vector<int> nums)
     // }
 
     //another approach
+    //time complexity - O(n)
     for(int i=2*nums.size()-1;i>=0;i--)
     {
         while(!s.empty() && nums[s.top()] <= nums[i%n])
