@@ -7,3 +7,6 @@ Stacks:
     6. Next greater element.
     7. Next Greater Element I (leetcode - 496).
     8. Min stack (leetcode - 155).
+    9. Largest Rectangle in Histogram (leetcode - 84).
+    10. Next Greater Element II (leetcode - 503).
+    11. Previous smaller element.
