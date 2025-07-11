@@ -35,11 +35,6 @@ using namespace std;
 //         }
 
 //         q1.swap(q2);
-        
-//         while(!q2.empty())
-//         {
-//             q2.pop();
-//         }
 
 //         return ele;
 //     }
@@ -61,10 +56,7 @@ using namespace std;
 //         }
 
 //         q1.swap(q2);
-//         while(!q2.empty())
-//         {
-//             q2.pop();
-//         }
+
 //         return ele;
 //     }
 
