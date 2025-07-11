@@ -239,7 +239,7 @@ void mapStl()
 {
     //Map operations -> insert, emplace, count, erase, find, size, empty
     map<string,int> id;
-    //key can be duplicate they are unique
+    //key can't be duplicate they are unique
 
     id["anuj"] = 16;
     id["chandan"] = 15;
