@@ -1,20 +1,45 @@
 #include <iostream>
-#include <vector>
+#include <unordered_map>
+#include <queue>
 using namespace std;
 
+//leetcode - 387
 int firstUniqChar(string s)
 {
+    //brute force 
+    //time complexity - O(n*n)
+    // for (int i = 0; i < s.size(); i++)
+    // {
+    //     bool found = false;
+    //     for (int j = 0; j < s.size(); j++)
+    //     {
+    //         if (i != j && s[i] == s[j])
+    //             found = true;
+    //     }
 
-    for (int i = 0; i < s.size(); i++)
+    //     if (found == false)
+    //         return i;
+    // }
+
+    // return -1;
+
+    //time complexity - O(n)
+    unordered_map<char, int> m;
+    queue<char> q;
+
+    for(int i=0;i<s.size();i++)
     {
-        bool found = false;
-        for (int j = 0; j < s.size(); j++)
+        if(m.find(s[i]) == m.end())
         {
-            if (i != j && s[i] == s[j])
-                found = true;
+            m.emplace(s[i], 1);
         }
+        else
+            m[s[i]]++;
+    }
 
-        if (found == false)
+    for(int i=0;i<s.size();i++)
+    {
+        if(m[s[i]] == 1)
             return i;
     }
 
@@ -23,5 +48,6 @@ int firstUniqChar(string s)
 
 int main()
 {
+    cout << firstUniqChar("leetcode") << endl;
     return 0;
 }
